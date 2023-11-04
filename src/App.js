@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import Nav from "./Nav";
+import Dashboard from './Dashboard';
+import Blog from './Blog';
+import Cover from './Cover';
+import Work from './Work';
+import Stand from './Stand';
+import Solution from './Solution';
+import Partner from './Partner';
+import Build from './Build';
+import Check from './Check';
+import Footer from './Footer';
+import { Box } from '@mui/material';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box sx={{ backgroundColor: "white", height:"100vh", overflow: "hidden", overflowY: "scroll", '::-webkit-scrollbar': {width: '0',} }}>
+      <Nav />
+      <Dashboard />
+      <Blog />
+      <Cover />
+      <Work />
+      <Stand />
+      <Solution />
+      <Partner />
+      <Build />
+      <Check />
+      <Footer />
+    </Box>
   );
 }
 
