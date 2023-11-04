@@ -7,7 +7,7 @@ const logo = new URL('./Assets/logo.png', import.meta.url);
 function Nav() {
 
   return (
-    <Box sx={{ background: "#FFFFFF", width: "100vw", minHeight: "80px", height: "14%", boxShadow: "0px 3px 6px #00000029", display: "flex", justifyContent: "flex-start", alignItems: "center" }}>
+    <Box sx={{ background: "#FFFFFF", width: "100vw", height: "80px", boxShadow: "0px 3px 6px #00000029", display: "flex", justifyContent: "flex-start", alignItems: "center" }}>
       <Box sx={{ backgroundColor: "transparent", width: "60%", minHeight: "60px", height: "75%", marginLeft: "139px" , display: "flex", justifyContent: "space-between", alignItems: "center"}}>
         <Box sx={{ width: "150px", height: "90%" }}>
           <img src={logo} alt='hi' style={{ width: "100%", height: "100%" }} />
