@@ -1,3 +1,6 @@
+import blog_1 from './Assets/blog1.jpeg';
+import blog_2 from './Assets/blog2.jpg';
+import blog_3 from './Assets/blog3.jpg';
 import music from './Assets/music.png';
 import theatre from './Assets/theatre.png';
 import literature from './Assets/Literature.png';
@@ -18,6 +21,20 @@ import partner_4 from './Assets/partner4.png';
 import partner_5 from './Assets/partner5.png';
 
 
+export const BlogInfo = [
+  {
+    id: 1,
+    imageSrc: blog_1
+  },
+  {
+    id: 2,
+    imageSrc: blog_2
+  },
+  {
+    id: 3,
+    imageSrc: blog_3
+  },
+]
 export const CoverInfo = [
   { 
     id: 1,

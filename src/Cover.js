@@ -6,7 +6,7 @@ import logo from './Assets/logo-lg.png';
 
 function Cover() {
   return (
-    <Box sx={{ height: "125%", width: "100%", backgroundImage: "linear-gradient(white 40%, #1D212A 40%)", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: 'column' }}>
+    <Box sx={{ height: "780px", width: "100%", backgroundImage: "linear-gradient(white 40%, #1D212A 40%)", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: 'column' }}>
       <Box sx={{ height: "20%", width: "100%", display: "flex", justifyContent: "flex-end", alignItems: "center", flexDirection: "column"}}>
         <Typography variant='h4' sx={{ color: "#333", fontWeight: "bolder", display: "inline-block" }}>WHAT WE COVER</Typography>
         <Typography variant='subtitle2' sx={{ color: "#1DEF55", fontWeight: "bold", margin: "0 0 40px 0"}}>We're taking legal representation for different sectors</Typography>

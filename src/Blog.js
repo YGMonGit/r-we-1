@@ -1,105 +1,145 @@
 import React, { useEffect, useState } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import { Box, Typography } from '@mui/material';
+import { Card, CardContent, Typography, Slide, Box } from '@mui/material';
+import { BlogInfo } from './data';
 import { MdFavorite } from 'react-icons/md';
 import { HiDotsHorizontal } from 'react-icons/hi';
+import FiberManualRecordIcon from '@mui/icons-material/FiberManualRecord';
 
-import './App.css';
-
-const Blog = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-  };
-  
-
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => setScreenWidth(window.innerWidth);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize); 
-  }, []);
-
-  if( screenWidth <= 600 ){
-    settings.slidesToShow = 1;
-  }
-  else {
-    settings.slidesToShow = 3;
-  }
-
-
+const SlideDots = ({ count, currentIndex, onClick }) => {
   return (
-    <Box sx={{ backgroundColor: "#F5F5F5", width:"100%", height: "86%", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
-      <Typography variant='h4' sx={{ color: "#333", fontWeight: "bold", display: "inline-block" }}>Blogs</Typography>
-      <Typography variant='subtitle2' sx={{ color: "#1DEF55", fontWeight: "bold", margin: "0 0 40px 0"}}>Read latest blogs and news</Typography>
-      <div className='blog-parent'>
-        <Slider {...settings}>
-            <div className='blog-container'>
-              <div className="card card1">
-                <Box sx={{ width: "65%", height: "50px", marginLeft: "20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <Typography variant='subtitle2' sx={{ color: "#CCC"}}>Mahider Assefa</Typography>
-                  <Typography variant='subtitle2' sx={{ color: "#CCC"}}>Nov 20</Typography>
-                </Box>
-                <Box sx={{ width: "85%", height: "60px", margin: "0 0 0 20px" }}>
-                  <Typography variant='subtitle1' sx={{fontWeight: "bold"}}>How to Find Bid Tendering to Grow Your Business?</Typography>
-                </Box>
-                <Box sx={{ width: "85%", height: "60px", margin: "30px 0 20px 20px", display: "flex", justifyContent: "space-between", alignItems: "center", }}>
-                  <Typography sx={{display: "flex", justifyContent: "center", alignItems: "center", color: "#DDD"}}><MdFavorite style={{width: "20px", height: "20px"}}/>3.8k</Typography>
-                  <Box sx={{ backgroundColor: "#333", height: "35px", width: "35px", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "50px" }}>
-                    <HiDotsHorizontal/>
-                  </Box>
-                </Box>
-              </div>
-              <div className='shade'></div>
-            </div>
-            <div className='blog-container'>
-              <div className="card card2">
-                <Box sx={{ width: "65%", height: "50px", marginLeft: "20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <Typography variant='subtitle2' sx={{ color: "#CCC"}}>Mahider Assefa</Typography>
-                  <Typography variant='subtitle2' sx={{ color: "#CCC"}}>Nov 20</Typography>
-                </Box>
-                <Box sx={{ width: "85%", height: "60px", margin: "0 0 0 20px" }}>
-                  <Typography variant='subtitle1' sx={{fontWeight: "bold"}}>How to Find Bid Tendering to Grow Your Business?</Typography>
-                </Box>
-                <Box sx={{ width: "85%", height: "60px", margin: "30px 0 20px 20px", display: "flex", justifyContent: "space-between", alignItems: "center", }}>
-                  <Typography sx={{display: "flex", justifyContent: "center", alignItems: "center", color: "#DDD"}}><MdFavorite style={{width: "20px", height: "20px"}}/>3.8k</Typography>
-                  <Box sx={{ backgroundColor: "#333", height: "35px", width: "35px", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "50px" }}>
-                    <HiDotsHorizontal/>
-                  </Box>
-                </Box>
-              </div>
-              <div className='shade'></div>
-            </div>
-            <div className='blog-container'>
-              <div className="card card3">
-                <Box sx={{ width: "65%", height: "50px", marginLeft: "20px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <Typography variant='subtitle2' sx={{ color: "#CCC"}}>Mahider Assefa</Typography>
-                  <Typography variant='subtitle2' sx={{ color: "#CCC"}}>Nov 20</Typography>
-                </Box>
-                <Box sx={{ width: "85%", height: "60px", margin: "0 0 0 20px" }}>
-                  <Typography variant='subtitle1' sx={{fontWeight: "bold"}}>How to Find Bid Tendering to Grow Your Business?</Typography>
-                </Box>
-                <Box sx={{ width: "85%", height: "60px", margin: "30px 0 20px 20px", display: "flex", justifyContent: "space-between", alignItems: "center", }}>
-                  <Typography sx={{display: "flex", justifyContent: "center", alignItems: "center", color: "#DDD"}}><MdFavorite style={{width: "20px", height: "20px"}}/>3.8k</Typography>
-                  <Box sx={{ backgroundColor: "#333", height: "35px", width: "35px", display: "flex", justifyContent: "center", alignItems: "center", borderRadius: "50px" }}>
-                    <HiDotsHorizontal/>
-                  </Box>
-                </Box>
-              </div>
-              <div className='shade'></div>
-            </div>
-        </Slider>
-      </div>
-    </Box>
+    <div style={{ display: 'flex', justifyContent: 'center', marginTop: '16px' }}>
+      {Array.from({ length: count }).map((_, index) => (
+        <FiberManualRecordIcon
+          key={index}
+          style={{ color: index === currentIndex ? '#1DEF55' : '#000000', cursor: 'pointer', margin: '0 2px', fontSize: '.7rem' }}
+          onClick={() => onClick(index)}
+        />
+      ))}
+    </div>
   );
 };
 
-export default Blog;
+const Slidess = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % BlogInfo.length);
+  };
+
+  const showSlider = window.innerWidth <= 900;
+  const cardGap = window.innerWidth <= 1000 ? '10px' : '30px';
+
+  const handleDotClick = (index) => {
+    setCurrentIndex(index);
+  };
+
+  return (
+    <div style={{ overflow: 'hidden', height: '400px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+      {showSlider ? (
+        <div style={{ overflow: 'hidden', display: 'flex', justifyContent: 'center', height: '300px', width: '100%' }}>
+          {BlogInfo.map((card, index) => (
+            <Slide
+              key={index}
+              direction={index === currentIndex ? 'left' : 'right'}
+              in={index === currentIndex}
+              mountOnEnter
+              unmountOnExit
+            >
+              <Card key={index} style={{ width: '300px', minWidth: '290px' }}>
+                <CardContent
+                  sx={{
+                    backgroundImage: `url(${card.imageSrc})`,
+                    backgroundSize: 'cover',
+                    height: '100%',
+                    width: '100%',
+                    display: 'flex',
+                    justifyContent: 'flex-end',
+                    alignItems: 'flex-start',
+                    flexDirection: 'column',
+                    margin: '0',
+                    padding: '0',
+                  }}
+                >
+                  <Box sx={{ width: '65%', height: '50px', marginLeft: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Typography variant="subtitle2" sx={{ color: '#CCC' }}>
+                      Mahider Assefa
+                    </Typography>
+                    <Typography variant="subtitle2" sx={{ color: '#CCC' }}>
+                      Nov 20
+                    </Typography>
+                  </Box>
+                  <Box sx={{ width: '85%', height: '60px', margin: '0 0 0 20px' }}>
+                    <Typography variant="subtitle1" sx={{ fontWeight: 'bold', color: 'white' }}>
+                      How to Find Bid Tendering to Grow Your Business?
+                    </Typography>
+                  </Box>
+                  <Box sx={{ width: '85%', height: '60px', margin: '30px 0 20px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <Typography sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#DDD' }}>
+                      <MdFavorite style={{ width: '20px', height: '20px' }} />
+                      3.8k
+                    </Typography>
+                    <Box sx={{ backgroundColor: '#333', height: '35px', width: '35px', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '50px' }}>
+                      <HiDotsHorizontal style={{ color: 'white' }} />
+                    </Box>
+                  </Box>
+                </CardContent>
+              </Card>
+            </Slide>
+          ))}
+        </div>
+      ) : (
+        <div style={{ display: 'flex', justifyContent: 'center', height: '70%', width: '90%', gap: `${cardGap}` }}>
+          {BlogInfo.map((card, index) => (
+            <Card key={index} style={{ width: '300px', minWidth: '290px' }}>
+              <CardContent
+                sx={{
+                  backgroundImage: `url(${card.imageSrc})`,
+                  backgroundSize: 'cover',
+                  height: '100%',
+                  width: '100%',
+                  display: 'flex',
+                  justifyContent: 'flex-end',
+                  alignItems: 'flex-start',
+                  flexDirection: 'column',
+                  margin: '0',
+                  padding: '0',
+                }}
+              >
+                <Box sx={{ width: '65%', height: '50px', marginLeft: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <Typography variant="subtitle2" sx={{ color: '#CCC' }}>
+                    Mahider Assefa
+                  </Typography>
+                  <Typography variant="subtitle2" sx={{ color: '#CCC' }}>
+                    Nov 20
+                  </Typography>
+                </Box>
+                <Box sx={{ width: '85%', height: '60px', margin: '0 0 0 20px' }}>
+                  <Typography variant="subtitle1" sx={{ fontWeight: 'bold', color: 'white' }}>
+                    How to Find Bid Tendering to Grow Your Business?
+                  </Typography>
+                </Box>
+                <Box sx={{ width: '85%', height: '60px', margin: '30px 0 20px 20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <Typography sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: '#DDD' }}>
+                    <MdFavorite style={{ width: '20px', height: '20px' }} />
+                    3.8k
+                  </Typography>
+                  <Box sx={{ backgroundColor: '#333', height: '35px', width: '35px', display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: '50px' }}>
+                    <HiDotsHorizontal style={{ color: 'white' }} />
+                  </Box>
+                </Box>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      )}
+      { showSlider? <SlideDots count={BlogInfo.length} currentIndex={currentIndex} onClick={handleDotClick} />: null }
+    </div>
+  );
+};
+
+export default Slidess;

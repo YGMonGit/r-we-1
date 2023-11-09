@@ -4,9 +4,9 @@ import { StandInfo } from './data';
 
 function Stand(){
   return(
-    <Box sx={{ width:"100%", height: "55%", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "column", margin: "20px 0 0 0" }}>
-      <Box sx={{ height: "20%", width: "100%", display: "flex", justifyContent: "flex-end", alignItems: "center", flexDirection: "column"}}>
-        <Typography variant='h4' sx={{ color: "#333", fontWeight: "bolder", display: "inline-block" }}>WHAT WE STAND FOR</Typography>
+    <Box sx={{ width:"100%", height: "400px", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "column", margin: "20px 0 0 0" }}>
+      <Box sx={{ height: "30%", width: "100%", display: "flex", justifyContent: "flex-end", alignItems: "center", flexDirection: "column"}}>
+        <Typography variant='h4' sx={{ color: "#333", fontWeight: "bolder" }}>WHAT WE STAND FOR</Typography>
         <Typography variant='subtitle2' sx={{ color: "#1DEF55", fontWeight: "bold", margin: "0 0 40px 0"}}>CNCM provides the community support, debate and foster the work of all members</Typography>
       </Box>
       <Box sx={{ width: "85%", flex: "1", display: "flex", alignItems: "flex-start", justifyContent: "space-evenly", margin: "25px 0 0 0" }}>
