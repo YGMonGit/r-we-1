@@ -4,13 +4,13 @@ import { SolutionInfo } from './data';
 
 function Solution() {
   return(
-    <Box sx={{ width:"100%", height: "400px", display: "flex", justifyContent: "center", alignItems: "center", gap: "60px", margin: "20px 0 0 0", backgroundColor: "#111111" }}>
+    <Box sx={{ width:"100%", height: "auto", padding: '40px 0', display: "flex", justifyContent: "center", alignItems: "center", gap: "60px", flexWrap: 'wrap', overflow: 'hidden', overflowY: 'scroll', '::-webkit-scrollbar': {width: '0'}, margin: "20px 0 0 0", backgroundColor: "#111111" }}>
       <Box sx={{ width: "auto", height: "40%", display: "flex", justifyContent: "center", alignItems: "flex-start", flexDirection: "column" }}>
         <Typography variant='h4' sx={{ color: "#1DEF55", fontWeight: "bolder" }}>Solutions & Packages</Typography>
         <Typography variant='caption' sx={{ width: "280px", color: "white", fontSize: ".95rem", margin: "10px 0 0 0" }}>CNCM provides the community support, debate and foster the work of all members</Typography>
       </Box>
       {SolutionInfo.map((item) => (
-        <Box sx={{ width: "300px", height: "80%", backgroundColor: "#FFF", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "column", borderRadius: "10px" }} key={item.id}>
+        <Box sx={{ width: "300px", height: "300px", backgroundColor: "#FFF", display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "column", borderRadius: "10px" }} key={item.id}>
           <Typography sx={{ color: "#1DEF55", fontWeight: "750", fontSize: ".9rem", margin: "35px 0 -5px 0"}}>{item.title}</Typography>
           <Typography variant='body2' sx={{ fontWeight: "bold", color: "#333" }}>{item.mainTitle}</Typography>
           <Typography variant='caption' sx={{ color: "#333", fontWeight: "lighter", fontStyle: "italic", fontSize: ".7rem", margin: "-5px 0 35px 0"}}>{item.subtitle}</Typography>

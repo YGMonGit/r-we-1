@@ -9,7 +9,7 @@ import { FaLinkedinIn } from 'react-icons/fa';
 
 function Footer() {
   return(
-    <Box sx={{ backgroundColor: "#1D212A", width:"100%", height: "410px", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}>
+    <Box sx={{ backgroundColor: "#1D212A", width:"100%", height: "410px", display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column", minWidth: '700px' }}>
       <Box sx={{ width: "100%", flex: "1", display: "flex", justifyContent: "center", alignItems: "center", gap: "50px"}}>
         <Box sx={{ height: "70%", display: "flex", justifyContent: "flex-start", alignItems: "flex-start", flexDirection: "column" }}>
           <img src={logo_w} alt='image' style={{ width: "150px", height: "auto", margin: "0 0 20px 0" }} />

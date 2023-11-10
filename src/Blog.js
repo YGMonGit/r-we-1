@@ -53,7 +53,7 @@ const Slidess = () => {
               <Card key={index} style={{ width: '300px', minWidth: '290px' }}>
                 <CardContent
                   sx={{
-                    backgroundImage: `url(${card.imageSrc})`,
+                    backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 1), transparent), url(${card.imageSrc})`,
                     backgroundSize: 'cover',
                     height: '100%',
                     width: '100%',
@@ -98,7 +98,7 @@ const Slidess = () => {
             <Card key={index} style={{ width: '300px', minWidth: '290px' }}>
               <CardContent
                 sx={{
-                  backgroundImage: `url(${card.imageSrc})`,
+                  backgroundImage: `linear-gradient(to top, rgba(0, 0, 0, 1), transparent), url(${card.imageSrc})`,
                   backgroundSize: 'cover',
                   height: '100%',
                   width: '100%',

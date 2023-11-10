@@ -13,13 +13,10 @@ import Footer from './Footer';
 
 import { Box } from '@mui/material';
 
-import NavTemp from './NavTemp';
-
 function App() {
   return (
     <Box sx={{ backgroundColor: "white", height:"100vh", overflow: "hidden", overflowY: "scroll", '::-webkit-scrollbar': {width: '0',} }}>
-      <NavTemp />
-      {/* <Nav /> */}
+      <Nav />
       <Dashboard />
       <Blog />
       <Cover />
